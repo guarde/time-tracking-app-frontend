@@ -3,17 +3,16 @@ import { Routes, Route } from "react-router";
 
 import HomePage from './pages/Home';
 import ProfilePage from './pages/Profile'
-import Sidebar from './components/Sidebar';
+import Layout from './components/Layout';
 
 function App() {
   return (
-    <>
-      <Sidebar />
-      <Routes>
+    <Routes>
+      <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/u/:username" element={<ProfilePage />} />
-      </Routes>
-    </>
+      </Route>
+    </Routes>
   )
 }
 
